@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Voting Results JANMYEAN-NORGE-2023</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <h1>Voting Results</h1>
+    <button onclick="fetchResults()">Show Results</button>
+    <button onclick="printTable()">Save results</button>
+    <label>
+      <input type="checkbox" id="acknowledgeCheckbox" />
+      New vote ? Check in to proceed </label
+    ><br />
+    <button id="proceedButton" disabled>New registration</button>
+
+    <table id="resultsTable">
+      <tr>
+        <th>Party</th>
+        <th>Votes</th>
+      </tr>
+      <!-- Results will be populated here -->
+    </table>
+    <canvas id="myPieChart" width="20" height="20"></canvas>
+
+    <script src="results.js"></script>
+    <script>
+      document.addEventListener("contextmenu", (event) =>
+        event.preventDefault()
+      ); // Disable right-click menu
+
+      document.addEventListener("keydown", (event) => {
+        if (
+          (event.ctrlKey || event.metaKey) &&
+          (event.key === "u" || event.key === "i" || event.key === "j")
+        ) {
+          event.preventDefault(); // Prevent Ctrl+U (or Cmd+U on macOS), Ctrl+Shift+I, and Ctrl+Shift+J
+        }
+      });
+    </script>
+    <script>
+      function printTable() {
+        var tableHTML = document.getElementById("resultsTable").outerHTML;
+        var newWin = window.open("", "_blank");
+        newWin.document.open();
+        newWin.document.write("<html><head><title>FINAL VOTES</title>");
+        newWin.document.write(
+          "<style>table { border-collapse: collapse; width: 100%; } td, th { border: 1px solid #ddd; padding: 8px; } tr:nth-child(even){background-color:#ddd ;} th { padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #4CAF50; color: white; }</style>"
+        );
+        newWin.document.write("</head><body>");
+        newWin.document.write(tableHTML);
+        newWin.document.write("</body></html>");
+        newWin.document.close();
+        setTimeout(function () {
+          newWin.print();
+          newWin.close();
+        }, 250);
+      }
+    </script>
+
+    <button id="proceedButton" disabled>New registration</button>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var checkbox = document.getElementById("acknowledgeCheckbox");
+        var button = document.getElementById("proceedButton");
+
+        checkbox.addEventListener("change", function () {
+          button.disabled = !this.checked;
+        });
+
+        button.addEventListener("click", function () {
+          if (checkbox.checked) {
+            window.location.href = "index.html"; // Replace with your target URL
+          }
+        });
+      });
+    </script>
+    <footer>
+      <p>
+        Copyright &copy; 2023 STEMMESTATUS<br />
+
+        *Product is still under update & yet to be launched*
+        <br />
+        Contact-<a
+          href="mailto:shashwatdogra1@gmail.com"
+          target="_blank"
+          title="Go to Email section"
+          style="color: white"
+          >shashwatdogra1@gmail.com</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

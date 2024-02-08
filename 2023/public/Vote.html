@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vote Now</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <script>
+      function isChrome() {
+        return (
+          /Chrome/.test(navigator.userAgent) &&
+          /Google Inc/.test(navigator.vendor)
+        );
+      }
+
+      if (!isChrome()) {
+        document.body.innerHTML =
+          "<p>This service is only available on Google Chrome.</p>";
+        // Optional: Redirect to another page or show a detailed message
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>KINDLY VOTE ACCORDINGLY:</h1>
+    <div>
+      <button class="my-button" onclick="vote('SOCIAL DEMOKRATS')">
+        Vote for SOCIAL DEMOKRATS</button
+      ><br />
+      <button class="my-button" onclick="vote('RATIONALISTS')">
+        Vote for RATIONALISTS</button
+      ><br />
+      <button class="my-button" onclick="vote('WORKERS PARTY')">
+        Vote for WORKERS PARTY</button
+      ><br />
+      <button class="my-button" onclick="vote('FREEDOM AND JUSTICE')">
+        Vote for FREEDOM AND JUSTICE</button
+      ><br />
+    </div>
+
+    <div id="dialog" class="hidden">Your vote has been recorded already.</div>
+
+    <script src="vote.js"></script>
+
+    <script>
+      document.addEventListener("contextmenu", (event) =>
+        event.preventDefault()
+      ); // Disable right-click menu
+
+      document.addEventListener("keydown", (event) => {
+        if (
+          (event.ctrlKey || event.metaKey) &&
+          (event.key === "u" || event.key === "i" || event.key === "j")
+        ) {
+          event.preventDefault(); // Prevent Ctrl+U (or Cmd+U on macOS), Ctrl+Shift+I, and Ctrl+Shift+J
+        }
+      });
+    </script>
+
+    <style>
+      .hidden {
+        display: none;
+      }
+
+      #dialog {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        border-radius: 25px;
+        transform: translate(-50%, -50%);
+        border: 3px solid black;
+        padding: 10px;
+        background-color: rgb(255, 252, 252);
+        color: rgb(20, 26, 187);
+        font-family: Georgia, "Times New Roman", Times, serif;
+        z-index: 1000;
+      }
+    </style>
+
+    <footer>
+      <p>
+        Copyright &copy; 2023 STEMMESTATUS<br />
+
+        *Product is still under update & yet to be launched*
+        <br />
+        Contact-<a
+          href="mailto:shashwatdogra1@gmail.com"
+          target="_blank"
+          title="Go to Email section"
+          style="color: white"
+          >shashwatdogra1@gmail.com</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

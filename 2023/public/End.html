@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Close Window</title>
+  </head>
+  <body>
+    <div class="container">
+      <p>
+        Please acknowledge the instructions by checking the box below: 1) I have
+        already voted .<br />
+      </p>
+      <label>
+        <input type="checkbox" id="acknowledgeCheckbox" />
+        Yes, I acknowledge the instruction. </label
+      ><br />
+      <button id="proceedButton" disabled>Check live results</button>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var checkbox = document.getElementById("acknowledgeCheckbox");
+        var button = document.getElementById("proceedButton");
+
+        checkbox.addEventListener("change", function () {
+          button.disabled = !this.checked;
+        });
+
+        button.addEventListener("click", function () {
+          if (checkbox.checked) {
+            window.location.href = "results.html"; // Replace with your target URL
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

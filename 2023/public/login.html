@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login to Vote</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #000000; /* Soft blue background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      #loginForm {
+        background-color: #ffffff; /* Solid white background */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        border-radius: 10px;
+        color: #000000;
+      }
+
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+
+      input[type="text"],
+      input[type="date"] {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        transition: box-shadow 0.3s;
+      }
+
+      input[type="text"]:focus,
+      input[type="date"]:focus {
+        box-shadow: 0 0 8px 0 rgba(72, 146, 225, 0.8);
+      }
+
+      button {
+        width: 100%;
+        background-color: #000000;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      button:active {
+        transform: scale(0.98);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Login to Vote</h1>
+    <div id="loginForm">
+      Unique ID: <input type="text" id="loginUniqueId" /><br />
+      Date of Birth: <input type="date" id="loginDob" /><br />
+      <button id="loginButton">Login</button>
+      <p id="loginResult"></p>
+    </div>
+    <script src="login.js"></script>
+    <footer>
+      <p>
+        Copyright &copy; 2023 STEMMESTATUS<br />
+
+        *Product is still under update & yet to be launched*
+        <br />
+        Contact-<a
+          href="mailto:shashwatdogra1@gmail.com"
+          target="_blank"
+          title="Go to Email section"
+          style="color: white"
+          >shashwatdogra1@gmail.com</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

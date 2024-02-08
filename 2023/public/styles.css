@@ -1,0 +1,91 @@
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-align: center;
+  background-color: black;
+  background-size: cover; /* Ensure background covers the entire page */
+  color: beige;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE/Edge */
+  user-select: none;
+  opacity: 1;
+  /* Adjusted for proper opacity setting */
+  background-repeat: no-repeat;
+}
+
+button {
+  margin: 30px;
+  padding: 30px;
+  font-size: 16px;
+  border-radius: 6px;
+  color: rgb(193, 52, 52);
+  font-family: fantasy;
+}
+
+table {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  border-color: antiquewhite;
+  text-align: center;
+  border-radius: 30px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+th,
+td {
+  border: 7px solid rgb(194, 173, 173);
+  padding: 8px;
+  text-align: center;
+  border-radius: 20px;
+  font-family: sans-serif;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-image: url(footer-background.jpg);
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: white;
+}
+
+#myPieChart {
+  max-width: 200px;
+  max-height: 200px;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+  button {
+    width: 100%;
+    padding: 25px 0;
+  }
+
+  table,
+  th,
+  td {
+    font-size: 12px; /* Smaller font size for small screens */
+  }
+
+  #resultsTable {
+    display: block;
+    overflow-x: auto;
+  }
+}
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+  /* Other styling as needed */
+}
